@@ -1,5 +1,5 @@
 # Part 1 - Debugging Scenario
-## Original Post on Edstem: 
+## Original Post on Edstem Java File: 
 ![](edstem1.png)
 ![](edstem2.png) 
 ### Description of the shown methods: 
@@ -35,7 +35,7 @@ public void clear() -	Clear out the entire heap (the heap should be empty after 
     }
 ```
 ## Response from TA: 
-I beleive the error that is causing the failure after running your tests may be in your 'public E remove()' method. Take a look at the index on the line 'return deleteIndex(1);' since the root element is stored at index 0 in a typical heap implementation. 
+I believe the error that is causing the failure after running your tests may be in your 'public E remove()' method. Take a look at the index on the line 'return deleteIndex(1);' since the root element is stored at index 0 in a typical heap implementation. 
 ### Error:
 ~~~
 public E remove() {
@@ -48,6 +48,24 @@ public E remove() {
 ## After TA Response Screenshot: 
 ![](ta.png)
 Bug description: The bug was in the index of the E remove() method. I changed the index from 1 to 0 since the root element is stored at index 0 and not 1. The bug was fixed and the tests passed as a reult. The files that were needed was PublicTester.java and MyMinHeap.java. I was in the starter directory.
+
+# Original Post on Edstem Bash Script Bug:
+![](bash1.png)
+![](bash2.png)
+
+### Screenshot in the post and related code:
+![](bashss.png)
+
+## Response from TA: 
+I believe the error that is causing the failure after running your file may be in your 3rd line of code. Take a look at the line 'if [[1 -eq $VAR ]]'. Try changing it by putting $VAR into double quotes and switching '-eq' and '1' to be after $VAR like so 'if [ "$VAR" -eq 1 ]'. By doing so, if VAR=1, "it was 1" should be printed.
+### Error:
+~~~
+if [[1 -eq $VAR ]]
+~~~
+## After TA Response Screenshot: 
+![](bashfixed.png)
+\
+Bug description: The bug was in the 3rd line of code. The bash script that I was using was BashBug.sh. To run the bash script, I entered in the terminal "bash BashBug.sh". After fixing the code and running the script, it was able to run.
 
 # Part 2 - Reflection
 **Q:** In a couple of sentences, describe something you learned from your lab experience in the second half of this quarter that you didn’t know before. It could be a technical topic we addressed specifically, something cool you found out on your own building on labs, something you learned from a tutor or classmate, and so on. It doesn’t have to be specifically related to a lab writeup, we just want to hear about cool things you learned! \
